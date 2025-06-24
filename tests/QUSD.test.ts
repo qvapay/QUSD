@@ -23,7 +23,7 @@ describe("QUSD Contract Tests", () => {
       [],
       deployer
     );
-    expect(name).toBeOk(stringAsciiCV("QUSD"));
+    expect(name).toBeOk(stringAsciiCV("QvaPay USD"));
 
     const { result: symbol } = simnet.callReadOnlyFn(
       "QUSD",
@@ -55,7 +55,7 @@ describe("QUSD Contract Tests", () => {
       [],
       deployer
     );
-    expect(tokenUri).toBeOk(noneCV());
+    expect(tokenUri).toBeOk(someCV(stringUtf8CV("https://qvapay.com/qusd.json")));
   });
 
   it("should allow deployer to mint tokens", () => {

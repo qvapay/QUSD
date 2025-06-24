@@ -42,7 +42,7 @@
 
 ;; Read-only accessors
 (define-read-only (get-name)
-    (ok "QUSD")
+    (ok "QvaPay USD")
 )
 (define-read-only (get-symbol)
     (ok "QUSD")
@@ -57,5 +57,5 @@
     (ok (ft-get-supply QUSD))
 )
 (define-read-only (get-token-uri)
-    (ok none)
+    (ok (some u"https://qvapay.com/qusd.json"))
 )
