@@ -3,8 +3,10 @@
 (impl-trait 'ST1NXBK3K5YYMD6FD41MVNP3JS1GABZ8TRVX023PT.sip-010-trait-ft-standard.sip-010-trait)
 
 ;; Constants
-(define-constant err-owner-only (err u100))
-(define-constant err-not-token-owner (err u101))
+(define-constant ERR-OWNER-ONLY (err u100))
+(define-constant ERR-NOT-TOKEN-OWNER (err u101))
+(define-constant ERR-NOT-ENOUGH-FUND (err u102))
+(define-constant ERR-INVALID-PARAMETERS (err u103))
 
 ;; Data
 (define-constant token-decimals u8)
@@ -19,8 +21,8 @@
 ;; Mint (only owner)
 (define-public (mint (amount uint) (recipient principal))
     (begin
-        (asserts! (is-eq tx-sender (var-get contract-owner)) err-owner-only)
-        (asserts! (> amount u0) (err u102))
+        (asserts! (is-eq tx-sender (var-get contract-owner)) ERR-OWNER-ONLY)
+        (asserts! (> amount u0) ERR-INVALID-PARAMETERS)
         (ft-mint? QUSD amount recipient)
     )
 )
@@ -28,8 +30,8 @@
 ;; Burn (only owner)
 (define-public (burn (amount uint) (sender principal))
     (begin
-        (asserts! (is-eq tx-sender (var-get contract-owner)) err-owner-only)
-        (asserts! (> amount u0) (err u102))
+        (asserts! (is-eq tx-sender (var-get contract-owner)) ERR-OWNER-ONLY)
+        (asserts! (> amount u0) ERR-INVALID-PARAMETERS)
         (ft-burn? QUSD amount sender)
     )
 )
@@ -37,11 +39,27 @@
 ;; Transfer (must be called by sender)
 (define-public (transfer (amount uint) (sender principal) (recipient principal) (memo (optional (buff 34))))
 	(begin
-		(asserts! (is-eq tx-sender sender) err-not-token-owner)
+		(asserts! (is-eq tx-sender sender) ERR-NOT-TOKEN-OWNER)
 		(try! (ft-transfer? QUSD amount sender recipient))
 		(match memo to-print (print to-print) 0x)
 		(ok true)
 	)
+)
+
+;; Set token uri
+(define-public (set-token-uri (value (string-utf8 256)))
+    (begin
+        (asserts! (is-eq tx-sender (var-get contract-owner)) ERR-OWNER-ONLY)
+        (var-set token-uri (some value))
+        (ok (print {
+              notification: "token-metadata-update",
+              payload: {
+                contract-id: (as-contract tx-sender),
+                token-class: "ft"
+              }
+            })
+        )
+    )
 )
 
 ;; Read-only accessors
