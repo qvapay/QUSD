@@ -1,0 +1,10 @@
+{
+  "sip": 10,
+  "name": "QvaPayUSD",
+  "description": "QUSD is a stablecoin that is pegged to the US dollar and is fully compliant with the SIP-010 standard for QvaPay treasury.",
+  "image": "https://qvapay.com/qusd.png",
+  "properties": {
+    "decimals": 8,
+    "external_url": "https://qvapay.com"
+  }
+}
