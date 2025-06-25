@@ -10,8 +10,8 @@ plan:
       transactions:
         - contract-publish:
             contract-name: QUSD
-            expected-sender: SP1CX5RPKFZ8CYST8ZYEF1JZVSPGD4BBF7740SX8K
-            cost: 32990
+            expected-sender: SP14CTSJZNKZ7YTR6C84368J2QXRW8RC20GSQ8KS2
+            cost: 32980
             path: contracts/QUSD.clar
             anchor-block-only: true
             clarity-version: 3
