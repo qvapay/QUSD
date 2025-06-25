@@ -55,7 +55,7 @@ describe("QUSD Contract Tests", () => {
       [],
       deployer
     );
-    expect(tokenUri).toBeOk(someCV(stringUtf8CV("https://qvapay.com/qusd.json")));
+    expect(tokenUri).toBeOk(someCV(stringUtf8CV("https://qvpay.me/qusd.json")));
   });
 
   it("should allow deployer to mint tokens", () => {
