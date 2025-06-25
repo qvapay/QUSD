@@ -62,6 +62,38 @@
     )
 )
 
+;; Set token name
+(define-public (set-token-name (value (string-ascii 32)))
+    (begin
+        (asserts! (is-eq tx-sender (var-get contract-owner)) ERR-OWNER-ONLY)
+        (var-set token-name value)
+        (ok (print {
+              notification: "token-metadata-update",
+              payload: {
+                contract-id: (as-contract tx-sender),
+                token-class: "ft"
+              }
+            })
+        )
+    )
+)
+
+;; Set token symbol
+(define-public (set-token-symbol (value (string-ascii 10)))
+    (begin
+        (asserts! (is-eq tx-sender (var-get contract-owner)) ERR-OWNER-ONLY)
+        (var-set token-symbol value)
+        (ok (print {
+              notification: "token-metadata-update",
+              payload: {
+                contract-id: (as-contract tx-sender),
+                token-class: "ft"
+              }
+            })
+        )
+    )
+)
+
 ;; Read-only accessors
 (define-read-only (get-name)
     (ok (var-get token-name))
