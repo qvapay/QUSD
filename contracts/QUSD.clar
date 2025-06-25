@@ -7,7 +7,11 @@
 (define-constant err-not-token-owner (err u101))
 
 ;; Data
+(define-constant token-decimals u8)
+(define-data-var token-name (string-ascii 32) "QvaPay USD")
+(define-data-var token-symbol (string-ascii 10) "QUSD")
 (define-data-var contract-owner principal tx-sender)
+(define-data-var token-uri (optional (string-utf8 256)) (some u"https://qvpay.me/qusd.json"))
 
 ;; Fungible Token
 (define-fungible-token QUSD)
@@ -42,13 +46,13 @@
 
 ;; Read-only accessors
 (define-read-only (get-name)
-    (ok "QvaPay USD")
+    (ok (var-get token-name))
 )
 (define-read-only (get-symbol)
-    (ok "QUSD")
+    (ok (var-get token-symbol))
 )
 (define-read-only (get-decimals)
-    (ok u8)
+    (ok token-decimals)
 )
 (define-read-only (get-balance (who principal))
     (ok (ft-get-balance QUSD who))
@@ -57,5 +61,5 @@
     (ok (ft-get-supply QUSD))
 )
 (define-read-only (get-token-uri)
-    (ok (some u"https://qvapay.com/qusd.json"))
+    (ok (var-get token-uri))
 )
