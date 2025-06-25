@@ -47,20 +47,21 @@
 )
 
 ;; Set token uri
-(define-public (set-token-uri (value (string-utf8 256)))
-    (begin
-        (asserts! (is-eq tx-sender (var-get contract-owner)) ERR-OWNER-ONLY)
-        (var-set token-uri (some value))
-        (ok (print {
-              notification: "token-metadata-update",
-              payload: {
-                contract-id: (as-contract tx-sender),
-                token-class: "ft"
-              }
-            })
-        )
-    )
-)
+;; (define-public (set-token-uri (value (string-utf8 256)))
+;;     (begin
+;;         (asserts! (is-eq tx-sender (var-get contract-owner)) ERR-OWNER-ONLY)
+;;         (var-set token-uri (some value))
+;;         (ok (print {
+;;               notification: "token-metadata-update",
+;;               payload: {
+;;                 contract-id: (as-contract tx-sender),
+;;                 token-class: "ft"
+;;               }
+;;             })
+;;         )
+;;     )
+;; )
+
 
 ;; Set token name
 (define-public (set-token-name (value (string-ascii 32)))
