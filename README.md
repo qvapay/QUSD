@@ -240,3 +240,4 @@ For questions, issues, or contributions:
 
 Deployer MainNet SP14CTSJZNKZ7YTR6C84368J2QXRW8RC20GSQ8KS2
 Deployer TestNet ST14CTSJZNKZ7YTR6C84368J2QXRW8RC20K8V67HB
+Official Token https://explorer.hiro.so/token/SP14CTSJZNKZ7YTR6C84368J2QXRW8RC20GSQ8KS2.QUSD?chain=mainnet
