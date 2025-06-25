@@ -1,0 +1,18 @@
+---
+id: 0
+name: Mainnet deployment
+network: mainnet
+stacks-node: "https://api.hiro.so"
+bitcoin-node: "http://blockstack:blockstacksystem@bitcoin.blockstack.com:8332"
+plan:
+  batches:
+    - id: 0
+      transactions:
+        - contract-publish:
+            contract-name: QvaPay USD
+            expected-sender: SPP4EZTCD1JG1CD1WNZMXD7931ZQXV62C50RDYMB
+            cost: 32990
+            path: contracts/QUSD.clar
+            anchor-block-only: true
+            clarity-version: 3
+      epoch: "3.1"
