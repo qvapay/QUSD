@@ -10,7 +10,7 @@
 
 ;; Data
 (define-constant token-decimals u8)
-(define-data-var token-name (string-ascii 32) "QvaPay USD")
+(define-data-var token-name (string-ascii 32) "QvaPayUSD")
 (define-data-var token-symbol (string-ascii 10) "QUSD")
 (define-data-var contract-owner principal tx-sender)
 (define-data-var token-uri (optional (string-utf8 256)) (some u"https://qvpay.me/qusd.json"))

@@ -9,8 +9,8 @@ plan:
     - id: 0
       transactions:
         - contract-publish:
-            contract-name: QvaPay USD
-            expected-sender: SPP4EZTCD1JG1CD1WNZMXD7931ZQXV62C50RDYMB
+            contract-name: QUSD
+            expected-sender: SP1CX5RPKFZ8CYST8ZYEF1JZVSPGD4BBF7740SX8K
             cost: 32990
             path: contracts/QUSD.clar
             anchor-block-only: true

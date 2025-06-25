@@ -1,6 +1,6 @@
 [project]
-name = 'QUSD'
-description = 'QUSD is a stablecoin that is pegged to the US dollar and is fully compliant with the SIP-010 standard for QvaPay treasury internal use.'
+name = 'QvaPayUSD'
+description = 'QUSD is a stablecoin that is pegged to the US dollar and is fully compliant with the SIP-010 standard for QvaPay treasury.'
 authors = ['n3omaster']
 telemetry = true
 cache_dir = './.cache'
