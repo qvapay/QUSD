@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="assets/QUSD.png" alt="QUSD" width="140" />
+<img src="assets/cover.jpg" alt="QUSD — QvaPay USD on Stacks" width="100%" />
 
 # QUSD · QvaPay USD
 
@@ -245,9 +245,24 @@ docs/
   genius-compliance.md   GENIUS Act obligations ↔ contract mechanisms
   deploy-v2.md           mainnet deployment, step by step
   migration-v1-to-v2.md  retire v1 to zero, initial mint, ledger go-live
-assets/                  logo (PNG · SVG · Pixelmator source)
+assets/                  brand kit — cover, logo in 4 sizes, Pixelmator source (see Brand assets)
 qusd.json                token metadata served at https://qvapay.com/qusd.json
 ```
+
+## Brand assets
+
+| File | Size | Use |
+|---|---|---|
+| [`assets/cover.jpg`](assets/cover.jpg) | 1600 × 900 | README banner, social preview |
+| [`assets/cover-4096.png`](assets/cover-4096.png) | 4096 × 2304 | print, press, full-resolution source |
+| [`assets/QUSD.png`](assets/QUSD.png) | 1000 × 1000, square | canonical token image (`qusd.json` → `https://qvapay.com/qusd.png`) |
+| [`assets/logo-512-rounded.png`](assets/logo-512-rounded.png) | 512 × 512, rounded square | app icon, token lists |
+| [`assets/logo-512-circle.png`](assets/logo-512-circle.png) | 512 × 512, circle | explorers and wallets (coin format) |
+| [`assets/logo-100-circle.png`](assets/logo-100-circle.png) | 100 × 100, circle | emoji, chat avatars |
+| [`assets/QUSD.pxd`](assets/QUSD.pxd) | — | Pixelmator Pro source |
+| [`assets/QUSD.svg`](assets/QUSD.svg) | 1000 × 1000 | raster wrapped in SVG, **not a real vector** — a traced SVG is still pending |
+
+Colour: `#6759EF` background, white symbol. QUSD is a QvaPay, Inc. trademark; use the assets to reference the token, never to imply endorsement.
 
 ## Documentation
 
