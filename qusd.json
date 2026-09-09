@@ -1,7 +1,7 @@
 {
   "sip": 10,
   "name": "QvaPayUSD",
-  "description": "QUSD is a stablecoin that is pegged to the US dollar and is fully compliant with the SIP-010 standard for QvaPay treasury.",
+  "description": "QUSD is the SIP-010 token that QvaPay's treasury uses on Stacks to mirror customer USD balances held in custody by QvaPay, Inc. It is not legal tender, is not a deposit, is not FDIC-insured and is not issued or backed by the U.S. government.",
   "image": "https://qvapay.com/qusd.png",
   "properties": {
     "decimals": 8,

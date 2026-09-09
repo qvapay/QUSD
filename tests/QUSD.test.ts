@@ -23,7 +23,7 @@ describe("QUSD Contract Tests", () => {
       [],
       deployer
     );
-    expect(name).toBeOk(stringAsciiCV("QvaPay USD"));
+    expect(name).toBeOk(stringAsciiCV("QvaPayUSD"));
 
     const { result: symbol } = simnet.callReadOnlyFn(
       "QUSD",
@@ -59,7 +59,7 @@ describe("QUSD Contract Tests", () => {
   });
 
   it("should allow deployer to mint tokens", () => {
-    const mintAmount = 1000000; // 1 QUSD with 6 decimals
+    const mintAmount = 1000000; // 0.01 QUSD (8 decimals)
     const { result } = simnet.callPublicFn(
       "QUSD",
       "mint",

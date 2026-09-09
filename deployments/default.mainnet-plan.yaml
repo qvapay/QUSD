@@ -16,3 +16,13 @@ plan:
             anchor-block-only: true
             clarity-version: 3
       epoch: "3.1"
+    - id: 1
+      transactions:
+        - contract-publish:
+            contract-name: qusd-v2
+            expected-sender: SP14CTSJZNKZ7YTR6C84368J2QXRW8RC20GSQ8KS2
+            cost: 96000
+            path: contracts/qusd-v2.clar
+            anchor-block-only: true
+            clarity-version: 3
+      epoch: "3.1"
